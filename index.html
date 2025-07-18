@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBS PRO FÚTBOL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .code-block {
+            background-color: #1f2937;
+            color: #d1d5db;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .kbd-style {
+            background-color: #e5e7eb;
+            color: #1f2937;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            border: 1px solid #d1d5db;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Main Container -->
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900">OBS PRO FÚTBOL</h1>
+            <p class="mt-2 text-lg text-gray-600">La configuración es de un OBS, diseñado para la retransmisión de partidos.</p>
+        </header>
+
+        <!-- Grid Layout for Manual Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Scene Structure Card -->
+            <div class="card p-6 lg:col-span-3">
+                <div class="flex items-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600 mr-3"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    <h2 class="text-2xl font-bold text-gray-900">Estructura de Escenas</h2>
+                </div>
+                <p class="mb-4 text-gray-600">La organización de escenas es clave para un manejo eficiente durante la retransmisión:</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start"><span class="font-bold text-red-600 mr-2">[S] PROD:</span><span>Es la escena principal que se envía a la salida de programa (la que ve el espectador).</span></li>
+                    <li class="flex items-start"><span class="font-bold text-blue-600 mr-2">[S] CÁMARAS:</span><span>Contiene todas las escenas de cámaras individuales anidadas. El orden se gestiona con las teclas F1-F12 para cambiar la cámara activa.</span></li>
+                    <li class="flex items-start"><span class="font-bold text-green-600 mr-2">[S] SONIDOS:</span><span>Agrupa todas las fuentes de audio (micrófonos de comentaristas, sonido ambiente, etc.).</span></li>
+                     <li class="flex items-start"><span class="font-bold text-gray-600 mr-2">[C] Cámara 01, 02...:</span><span>Cada cámara (c1, c2, etc.) tiene su propia escena individual para facilitar su manejo, grabación aislada y monitorización.</span></li>
+                </ul>
+            </div>
+
+            <!-- Hotkeys Card -->
+            <div class="card p-6 lg:col-span-2">
+                <div class="flex items-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600 mr-3"><path d="M18 8.5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4.5"></path><path d="m10 10-4.5 4.5"></path><path d="m10.5 4.5-5 5"></path><path d="m15 10-5.5 5.5"></path><path d="M14 19.5v-5.5l5.5 5.5Z"></path></svg>
+                    <h2 class="text-2xl font-bold text-gray-900">Atajos de Teclado</h2>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex justify-between items-center"><span class="font-medium">Mostrar Marcador</span><span class="kbd-style">Ctrl + M</span></li>
+                    <li class="flex justify-between items-center"><span class="font-medium">Ocultar Marcador</span><span class="kbd-style">Ctrl + N</span></li>
+                    <li class="flex justify-between items-center"><span class="font-medium">Marcador Grande</span><span class="kbd-style">Ctrl + B</span></li>
+                    <li class="flex justify-between items-center"><span class="font-medium">Mostrar Cámaras (1-12)</span><span class="kbd-style">F1 - F12</span></li>
+                    <li class="flex justify-between items-center"><span class="font-medium">Grabar Cámaras Izquierda</span><span class="kbd-style">Ctrl + I</span></li>
+                    <li class="flex justify-between items-center"><span class="font-medium">Grabar Cámaras Derecha</span><span class="kbd-style">Ctrl + O</span></li>
+                    <li class="flex justify-between items-center"><span class="font-medium">Guardar Repetición (8s)</span><span class="kbd-style">Ctrl + G</span></li>
+                </ul>
+            </div>
+
+             <!-- Monitoring Card -->
+            <div class="card p-6">
+                <div class="flex items-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600 mr-3"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    <h2 class="text-2xl font-bold text-gray-900">Monitorización</h2>
+                </div>
+                <p class="mb-2">Para monitorear todas las cámaras simultáneamente, se utiliza la herramienta de OBS:</p>
+                <div class="code-block text-sm">Herramientas &gt; durchblick</div>
+            </div>
+            
+            <!-- Replay Card -->
+            <div class="card p-6 bg-yellow-50 border-l-4 border-yellow-400">
+                <div class="flex items-center mb-4">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-600 mr-3"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <h2 class="text-2xl font-bold text-gray-900">Repeticiones</h2>
+                </div>
+                <p class="text-yellow-800">La grabación de repeticiones consume muchos recursos. Con 12 cámaras, se recomienda grabar solo 6 para mantener un uso de GPU estable (probado con RTX 3070 Ti).</p>
+            </div>
+
+            <!-- Overlay Card -->
+            <div class="card p-6">
+                <div class="flex items-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600 mr-3"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v5"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M4 12.5a2.5 2.5 0 0 1 5 0V18a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-5.5Z"></path></svg>
+                    <h2 class="text-2xl font-bold text-gray-900">Overlay</h2>
+                </div>
+                <p class="mb-2">La configuración del marcador y plantillas se encuentra en:</p>
+                <div class="code-block text-sm">app.overlay.uno</div>
+            </div>
+
+            <!-- SRT Configuration Card -->
+            <div class="card p-6 lg:col-span-3">
+                <div class="flex items-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600 mr-3"><path d="M12 20h.01"></path><path d="M8.5 16.429a5 5 0 0 1 7 0"></path><path d="M5 12.859a10 10 0 0 1 14 0"></path><path d="M2 9.289a15 15 0 0 1 20 0"></path><path d="M12 4v.01"></path></svg>
+                    <h2 class="text-2xl font-bold text-gray-900">Conexión de Cámaras (SRT)</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">OBS (Receptor)</h3>
+                        <p class="mb-2">En la fuente multimedia de OBS, usa esta dirección. Cambia <code>&lt;ID&gt;</code> por el de la cámara.</p>
+                        <div class="code-block">srt://0.0.0.0:22222?mode=listener&streamid=&lt;ID&gt;</div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Dispositivo Emisor (Móvil, Veo, etc.)</h3>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>En la app de streaming, crea una nueva conexión.</li>
+                            <li>
+                                Configure la <strong>URL y Puerto</strong>:
+                                <ul class="list-disc list-inside ml-4 mt-1">
+                                    <li><strong>Red Local (WiFi):</strong> <code>192.168.1.100:22222</code></li>
+                                    <li><strong>Red Externa (Internet):</strong> <code>tu.dominio.externo:22223</code></li>
+                                </ul>
+                            </li>
+                            <li><strong>Modo SRT:</strong> <span class="font-semibold">Caller</span></li>
+                            <li><strong>Latencia:</strong> <span class="font-semibold">1000</span> (1 seg).</li>
+                            <li><strong>Stream ID:</strong> <span class="font-semibold"><code>&lt;ID&gt;</code> que corresponda.</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Camera Distribution Card -->
+            <div class="card p-6 lg:col-span-3">
+                <div class="flex items-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600 mr-3"><path d="M21 10V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10"></path><path d="m17 17-4.5-4.5"></path><path d="m21 13-1.5-1.5"></path><path d="m13 21-1.5-1.5"></path><path d="M17 21h4v-4"></path><path d="M7 3v4H3"></path></svg>
+                    <h2 class="text-2xl font-bold text-gray-900">Distribución de Cámaras</h2>
+                </div>
+                <p class="mb-4 text-gray-600">Posicionamiento recomendado de las cámaras en el campo para una cobertura completa del partido.</p>
+                <div class="flex justify-center items-center bg-gray-100 rounded-lg p-4">
+                    <!-- SVG drawing of the soccer field and cameras -->
+                    <svg viewBox="0 0 1000 650" class="rounded-lg shadow-md max-w-full h-auto" aria-label="Diagrama de la distribución de las cámaras en el campo de fútbol.">
+                      <!-- Field -->
+                      <rect x="50" y="50" width="900" height="550" fill="#2E7D32" stroke="white" stroke-width="3"/>
+                      <!-- Center Line -->
+                      <line x1="500" y1="50" x2="500" y2="600" stroke="white" stroke-width="3"/>
+                      <!-- Center Circle -->
+                      <circle cx="500" cy="325" r="90" stroke="white" stroke-width="3" fill="none"/>
+                      <circle cx="500" cy="325" r="3" fill="white"/>
+                      <!-- Penalty Areas -->
+                      <rect x="50" y="150" width="165" height="350" stroke="white" stroke-width="3" fill="none"/>
+                      <rect x="785" y="150" width="165" height="350" stroke="white" stroke-width="3" fill="none"/>
+                      <!-- Goal Areas -->
+                      <rect x="50" y="230" width="55" height="190" stroke="white" stroke-width="3" fill="none"/>
+                      <rect x="895" y="230" width="55" height="190" stroke="white" stroke-width="3" fill="none"/>
+                      <!-- Camera Positions (approximated) -->
+                      <g font-family="Inter, sans-serif" font-weight="bold" font-size="20" text-anchor="middle">
+                        <g transform="translate(500, 630)"><path d="M0 -20 L20 0 L0 20 L-20 0 Z" fill="#42A5F5" stroke="white" stroke-width="2"/><text y="6" fill="black">c1</text></g>
+                        <g transform="translate(300, 620)"><path d="M0 -20 L20 0 L0 20 L-20 0 Z" fill="#42A5F5" stroke="white" stroke-width="2"/><text y="6" fill="black">c2</text></g>
+                        <g transform="translate(700, 620)"><path d="M0 -20 L20 0 L0 20 L-20 0 Z" fill="#42A5F5" stroke="white" stroke-width="2"/><text y="6" fill="black">c3</text></g>
+                        <g transform="translate(850, 550)"><path d="M0 -20 L20 0 L0 20 L-20 0 Z" fill="#42A5F5" stroke="white" stroke-width="2"/><text y="6" fill="black">c4</text></g>
+                        <g transform="translate(150, 550)"><path d="M0 -20 L20 0 L0 20 L-20 0 Z" fill="#42A5F5" stroke="white" stroke-width="2"/><text y="6" fill="black">c5</text></g>
+                        <g transform="translate(150, 20)"><path d="M0 -20 L20 0 L0 20 L-20 0 Z" fill="#42A5F5" stroke="white" stroke-width="2"/><text y="6" fill="black">c6</text></g>
+                        <g transform="translate(850, 20)"><path d="M0 -20 L20 0 L0 20 L-20 0 Z" fill="#42A5F5" stroke="white" stroke-width="2"/><text y="6" fill="black">c7</text></g>
+                        <g transform="translate(50, 100)"><path d="M0 -20 L20 0 L0 20 L-20 0 Z" fill="#42A5F5" stroke="white" stroke-width="2"/><text y="6" fill="black">c8</text></g>
+                        <g transform="translate(950, 100)"><path d="M0 -20 L20 0 L0 20 L-20 0 Z" fill="#42A5F5" stroke="white" stroke-width="2"/><text y="6" fill="black">c9</text></g>
+                        <g transform="translate(950, 500)"><path d="M0 -20 L20 0 L0 20 L-20 0 Z" fill="#42A5F5" stroke="white" stroke-width="2"/><text y="6" fill="black">c10</text></g>
+                        <g transform="translate(50, 500)"><path d="M0 -20 L20 0 L0 20 L-20 0 Z" fill="#42A5F5" stroke="white" stroke-width="2"/><text y="6" fill="black">c11</text></g>
+                      </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="text-center mt-10 text-gray-500 text-sm">
+            <p>Manual generado automáticamente. Verifique las IPs y puertos para su configuración específica.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
